@@ -1,0 +1,559 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  color: black;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 7px;
+  width: 98%;
+  height: 80vh;
+  background-color: whitesmoke;
+}
+
+.trash {
+  width: 1em;
+}
+
+.edit {
+  width: 1em;
+}
+
+.Ctas {
+  display: none;
+}
+
+.container_CF {
+  overflow: auto;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.img_CF {
+  width: 350px;
+  height: 220px;
+}
+
+.CF {
+  display: flex;
+  /* width: 50%; */
+  flex: 1;
+  padding: 15px;
+  height: 250px;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.CF:hover {
+  background-color: rgba(128, 128, 128, 0.37);
+  border-radius: 5px;
+}
+
+.text_CF {
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.text_CF h3 {
+  font-weight: bolder;
+  color: black;
+  width: 100%;
+  text-align: center;
+}
+
+.text_CF p {
+  text-align: center;
+}
+.opciones {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  width: 100%;
+}
+
+.eliminar {
+  font-size: 20px;
+  background-color: rgba(255, 0, 0, 0.795);
+  border: 1px solid black;
+
+  height: 30px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.modificar {
+  font-size: 20px;
+  background-color: rgba(0, 132, 255, 0.795);
+  border: 1px solid black;
+  padding: 5px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.ver {
+  font-size: 20px;
+  background-color: rgba(0, 255, 64, 0.795);
+  border: 1px solid black;
+  padding: 5px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+/* css para sección de pisos */
+
+.title_piso {
+  text-align: center;
+}
+.container_pisos {
+  overflow: auto;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.img_pisos {
+  width: 350px;
+  height: 220px;
+}
+
+.piso {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* width: 50%; */
+  flex: 1;
+  padding: 15px;
+  height: 320px;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.piso:hover {
+  background-color: rgba(128, 128, 128, 0.37);
+  border-radius: 5px;
+}
+
+.opciones_pisos {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  width: 100%;
+}
+
+.eliminar {
+  font-size: 20px;
+  background-color: rgba(255, 0, 0, 0.795);
+  border: 1px solid rgb(204, 31, 31);
+
+  height: 30px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.modificar {
+  font-size: 20px;
+  background-color: rgba(0, 132, 255, 0.795);
+  border: 1px solid rgb(12, 158, 184);
+  padding: 5px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.ver {
+  font-size: 20px;
+  background-color: rgba(0, 255, 64, 0.795);
+  border: 1px solid rgb(43, 192, 23);
+  padding: 5px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+/* ambientes estilos */
+
+.title_ambiente {
+  text-align: center;
+}
+.container_ambientes {
+  overflow: auto;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.img_ambiente {
+  width: 350px;
+  height: 220px;
+}
+
+.ambiente {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* width: 50%; */
+  flex: 1;
+  padding: 15px;
+  height: 320px;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.ambiente:hover {
+  background-color: rgba(128, 128, 128, 0.37);
+  border-radius: 5px;
+}
+
+.opciones_ambientes {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  width: 100%;
+}
+
+.eliminar {
+  font-size: 20px;
+  background-color: rgba(255, 0, 0, 0.795);
+  border: 1px solid rgb(204, 31, 31);
+
+  height: 30px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.modificar {
+  font-size: 20px;
+  background-color: rgba(0, 132, 255, 0.795);
+  border: 1px solid rgb(12, 158, 184);
+  padding: 5px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.ver {
+  font-size: 20px;
+  background-color: rgba(0, 255, 64, 0.795);
+  border: 1px solid rgb(43, 192, 23);
+  padding: 5px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+/* css para sección de inventario */
+
+.container_inventario {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 25px;
+  height: 70vh;
+}
+
+.title_inventario {
+  text-align: center;
+}
+
+.subtitle_inventario {
+  text-align: center;
+  font-size: 40px;
+}
+
+.buscador {
+  display: flex;
+  justify-content: end;
+}
+
+.container_elementos {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.container_descripcion {
+  width: 50%;
+}
+
+/* ----- modifica seccion 1 ------*/
+.img_elemento {
+  width: 90px;
+  height: 65px;
+  border-radius: 25px;
+}
+
+.elementos {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  overflow: auto;
+  height: 50vh;
+
+  padding: 5px;
+}
+
+.elemento {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 5px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.elemento:hover {
+  background: rgba(128, 128, 128, 0.589);
+  border-radius: 2px;
+  transition: 0.5s;
+}
+
+.opc_elemento {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+
+  background-color: rgba(0, 153, 255, 0.637);
+  width: 35px;
+  cursor: pointer;
+  transition: 1s;
+  border-radius: 2px;
+}
+
+.edit:hover {
+  background-color: rgb(0, 153, 255);
+  transition: 1s;
+}
+
+.elimina {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 40px;
+  background-color: rgba(255, 0, 0, 0.637);
+  border: solid 1px red;
+  width: 35px;
+  cursor: pointer;
+  transition: 1s;
+  border-radius: 2px;
+}
+.elimina:hover {
+  background-color: red;
+  transition: 1s;
+}
+
+/* modoficia seccion 2 */
+
+.container_descripcion {
+  display: block;
+  height: 50vh;
+  background-color: rgba(128, 128, 128, 0.26);
+  border-radius: 2px;
+}
+
+.section1 {
+  display: none;
+}
+
+.dato_ambiente {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.nombre_ambiente {
+  text-align: center;
+}
+
+.img_present {
+  width: 350px;
+}
+
+.elemento_img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.section2{
+    padding: 10px;
+}
+
+.img_elementos {
+    width: 280px;
+  }
+
+.datos_elemento{
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+    gap: 10px;
+}
+
+.descrip{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+/* permite modificar los modulos de ivnetario  */
+
+
+/* seccion de operaciones */
+
+
+.operaciones{
+  display: flex;
+}
+
+.show_operaciones{
+  width: 80%;
+}
+
+.botones{
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.boton{
+  display: flex;
+  width: 180px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  border-radius: 8px;
+  gap: 10px;
+  border: none;
+  background-color: rgb(215, 216, 216);
+  word-wrap: break-word;
+  cursor: pointer;
+ 
+}
+
+.boton:hover{
+  background-color: rgb(199, 199, 199);
+}
+
+.boton img{
+  width: 40px;
+  height: 40px;
+}
+
+
+#seccion-1{
+  background-color: #62626280;
+
+}
+
+#seccion-2{
+  background-color: #62626280;
+  display: none;
+  height: 70vh;
+}
+
+
+#seccion-3{
+  background-color: #62626280;
+  display: none;
+  height: 70vh;
+}
+
+
+#seccion-4{
+  background-color: #62626280;
+  display: none;
+  height: 70vh;
+}
+
+
+
+
+/* perzonaliza la sección  */
+
+.historial{
+  height: 100%;
+  width: 100%;
+
+  
+}
+
+.contenedor_tarjetas{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 100%;
+ 
+  height: 100%;
+}
+
+.tarjeta_delet{
+  box-sizing: border-box;
+  border: 1px solid black;
+  width: 30%;
+  height: 30%;
+  flex: 1;
+  font-size: 1.1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.linea{
+  width: 100%;
+}
+
+.fecha{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-size: 0.7rem;
+}

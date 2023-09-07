@@ -1,0 +1,57 @@
+   <div>
+        <h1 class='title_piso'>Seleccione  Piso</h1>
+        <hr>
+    </div>
+
+    <main class="container_pisos">
+
+        <div class="piso">
+            <img src="./assets/img/piso1.jpg" class="img_pisos" alt="">
+            <h2>Piso 1</h2>
+            
+            <?php 
+                    
+                    if($rol == 1){
+                        echo " <div class='Opciones_pisos'>
+                        <input type='submit' class='modificar' value='Modificar'>
+                        <input type='submit' class='eliminar' value='Eliminar'>
+                        <input type='submit' class='ver' value='ver'>
+                    </div>";
+                    }
+                    
+                    ?>
+           
+        </div>
+        <div class="piso">
+            <img src="./assets/img/piso2.jpg" class="img_CF" alt="">
+            <h2>Piso 2</h2>
+            <?php 
+                    
+                    if($rol == 1){
+                        echo " <div class='Opciones_pisos'>
+                        <input type='submit' class='modificar' value='Modificar'>
+                        <input type='submit' class='eliminar' value='Eliminar'>
+                        <input type='submit' class='ver' value='ver'>
+                    </div>";
+                    }
+                    
+                    ?>
+           
+        </div>
+        <div class="piso">
+            <img src="./assets/img/piso3.jpg" class="img_CF" alt="">
+            <h2>Piso 3</h2>
+             <?php 
+                    
+                    if($rol == 1){
+                        echo " <div class='Opciones_pisos'>
+                        <input type='submit' class='modificar' value='Modificar'>
+                        <input type='submit' class='eliminar' value='Eliminar'>
+                        <input type='submit' class='ver' value='ver'>
+                    </div>";
+                    }
+                    
+                    ?>
+           
+        </div>
+    </main>

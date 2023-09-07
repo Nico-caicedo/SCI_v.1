@@ -1,0 +1,57 @@
+    <div>
+        <h1 class='title_ambiente'>Selecione Ambiente</h1>
+        <hr>
+    </div>
+
+    <main class="container_ambientes">
+
+        <div class="ambiente">
+            <img src="./assets/img/ambiente1.jpg" class="img_ambiente" alt="">
+            <h2>Ambiente 307</h2>
+            
+            <?php 
+                    
+                    if($rol == 1){
+                        echo " <div class='Opciones_ambientes'>
+                        <input type='submit' class='modificar' value='Modificar'>
+                        <input type='submit' class='eliminar' value='Eliminar'>
+                        <input type='submit' class='ver' value='ver'>
+                    </div>";
+                    }
+                    
+                    ?>
+           
+        </div>
+        <div class="ambiente">
+            <img src="./assets/img/ambiente2.jpg" class="img_ambiente" alt="">
+            <h2>Ambiente 306</h2>
+            <?php 
+                    
+                    if($rol == 1){
+                        echo " <div class='Opciones_ambientes'>
+                        <input type='submit' class='modificar' value='Modificar'>
+                        <input type='submit' class='eliminar' value='Eliminar'>
+                        <input type='submit' class='ver' value='ver'>
+                    </div>";
+                    }
+                    
+                    ?>
+           
+        </div>
+        <div class="ambiente">
+            <img src="./assets/img/ambiente3.jpg" class="img_ambiente" alt="">
+            <h2>Ambiente 307</h2>
+             <?php 
+                    
+                    if($rol == 1){
+                        echo " <div class='Opciones_ambientes'>
+                        <input type='submit' class='modificar' value='Modificar'>
+                        <input type='submit' class='eliminar' value='Eliminar'>
+                        <input type='submit' class='ver' value='ver'>
+                    </div>";
+                    }
+                    
+                    ?>
+           
+        </div>
+    </main>

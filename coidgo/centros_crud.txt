@@ -1,0 +1,57 @@
+ <?php 
+    include './controllers/conexion.php';
+    include './controllers/centros_educacion.php';
+    
+    ?>
+    <div class="Ctas">
+    <!-- seccion que permite operaciones CRUD a centros de formación -->
+  
+    <h1>Administrar centros de formación</h1>
+
+    <h2>agregar Centros de formación</h2>
+    <!-- <form method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" required><br>
+        <label for="descripcion">dirección:</label>
+        <input type="text" name="descripcion" required><br>
+        <label for="precio">Municipio:</label>
+        <select name="" id="">
+            <?php 
+            // $consul = mysqli_query($conn, "SELECT * FROM municipios");
+            // while( $fila = mysqli_fetch_assoc($consul)){
+            //     $name = $fila['name_municipio'];
+            //     $id = $fila['id'];
+            //     echo " <option value='$id' >$name</option>";
+            // }
+            
+            ?>
+           
+        </select>
+      -->
+        <button type="submit">Agregar Elemento</button>
+    </form>
+
+    <h2>Elementos</h2>
+    <table>
+        <tr>
+          
+            <th>Nombre</th>
+            <th>Ubicación</th>
+            <th>Municipio</th>
+            <th>Municipio</th>
+        </tr>
+        <?php 
+        //foreach ($elementos as $e): ?>
+        <tr>
+         
+            <td><?php echo $e['name_cta']; ?></td>
+            <td><?php echo $e['direccion']; ?></td>
+            <td><?php echo $e['id_municipio']; ?></td>
+        <td><?php echo "<img src='./assets/img/trash.svg' class='trash' alt='elimnar'>
+        <img src='./assets/img/edit.svg' class='edit' alt='editar'>" ?></td>
+        </tr>
+       <?php 
+    // endforeach; ?>
+    </table>
+    </div>
+    </main>

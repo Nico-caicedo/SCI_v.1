@@ -1,0 +1,71 @@
+<main>
+        <div class="container_CF">
+            <div class="CF">
+                <img src="./assets/img/cta.jpg" class="img_CF" alt="">
+                <div class='text_CF'>
+                    <h3>Centro Tecnologico de la Amazonia</h3>
+                    <p>Dirección: Kilómetro Vía del Aeropuerto-Belen, Florencia, Caquetá</p>
+                    <?php 
+                    
+                    if($rol == 1){
+                        echo " <div class='opciones'>
+                        <input type='submit' class='modificar' value='Modificar'>
+                        <input type='submit' class='eliminar' value='Eliminar'>
+                        <input type='submit' class='ver' value='ver'>
+                    </div>";
+                    }
+                    
+                    ?>
+                   
+                </div>
+            </div>
+            <div class="CF">
+                <img src="./assets/img/local.jpg" class="img_CF" alt="">
+                <div class='text_CF'>
+                    <h3>Centro Tecnologico de la Amazonia</h3>
+                    <p>Direccón: Kilómetro Vía del Aeropuerto-Belen, Florencia, Caquetá</p>
+                    <?php 
+                    
+                    if($rol == 1){
+                        echo " <div class='opciones'>
+                        <input type='submit' class='modificar' value='Modificar'>
+                        <input type='submit' class='eliminar' value='Eliminar'>
+                        <input type='submit' class='ver' value='ver'>
+                    </div>";
+                    }
+                    
+                    ?>
+                   
+                </div>
+            </div>
+
+            <div class="CF">
+                <img src="./assets/img/local.jpg" class="img_CF" alt="">
+                <div class='text_CF'>
+                    <h3>Centro Tecnologico de la Amazonia</h3>
+                    <p>Direccón: Kilómetro Vía del Aeropuerto-Belen, Florencia, Caquetá</p>
+                    
+                </div>
+            </div>
+
+            <div class="CF">
+                <img src="./assets/img/local.jpg" class="img_CF" alt="">
+                <div class='text_CF'>
+                    <h3>Centro Tecnologico de la Amazonia</h3>
+                    <p>Direccón: Kilómetro Vía del Aeropuerto-Belen, Florencia, Caquetá</p>
+                    
+                </div>
+            </div>
+
+            <div class="CF">
+                <img src="./assets/img/local.jpg" class="img_CF" alt="">
+                <div class='text_CF'>
+                    <h3>Centro Tecnologico de la Amazonia</h3>
+                    <p>Direccón: Kilómetro Vía del Aeropuerto-Belen, Florencia, Caquetá</p>
+                    
+                </div>
+            </div>
+
+
+        </div>
+    </main>

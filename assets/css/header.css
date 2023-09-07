@@ -1,0 +1,199 @@
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  height: 100px;
+}
+
+/* configura la sección del logo y nombre de empres */
+.identidad {
+  width: 33.3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.logo_sena {
+  width: 20%;
+}
+
+/* configura las opciones que aparece solo para el admin */
+
+.opciones {
+  width: 33.3%;
+}
+
+.opciones ul {
+  display: flex;
+  gap: 85px;
+}
+
+.opciones a {
+  text-decoration: none;
+  color: black;
+  padding: 20px;
+}
+
+.opciones li {
+  list-style: none;
+}
+
+.opciones a:hover {
+  background-color: rgba(128, 128, 128, 0.281);
+  color: rgb(2, 175, 2);
+}
+
+/* modifica la sección del perfil */
+.perfil {
+  width: 33.3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.perfil img {
+  width: 12%;
+}
+
+.perfil:hover {
+  background-color: rgba(128, 128, 128, 0.336);
+}
+
+.mensaje {
+  display: none;
+  position: absolute;
+  top: 12%;
+  right: 2%;
+  background-color: rgb(173, 170, 170);
+  width: 13%;
+  height: 10%;
+  border-radius: 5px;
+}
+
+.active {
+  pointer-events: auto;
+  display: block;
+}
+
+.mensaje ol {
+  display: flex;
+  flex-direction: column;
+}
+
+.mensaje ol li {
+  display: flex;
+  align-items: center;
+  padding: 0rem 0.5rem;
+  height: 1.7rem;
+}
+
+.mensaje ol li i {
+  color: black;
+  margin-right: 5px;
+}
+
+.mensaje ol li a {
+  color: #222;
+}
+
+.mensaje ol :hover {
+   opacity: 0.8;
+}
+
+/* Estilos para la ventana modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  max-width: 80%; /* Ajusta el ancho máximo según tu diseño */
+  height: 500px;
+  width: 500px;
+}
+
+/* Estilos para mostrar la ventana modal */
+.modal.active {
+  display: block;
+}
+
+/* Estilos para el botón de cierre dentro de la modal */
+.modal button#cerrarModal {
+  position: absolute;
+  
+  right: 50px;
+  bottom: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+
+.datos_personales{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  gap: 15px;
+  height: 80%;
+
+}
+
+.campos_user{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 15px;
+}
+
+.datos_personales input[type="text"]{
+  height: 40px;
+  width: 200px;
+  font-size: 25px;
+}
+
+.cargar_datos{
+  position: absolute;
+  height: 50px;
+  width: 150px;
+  background-color: rgba(0, 128, 0, 0.685);
+  font-size: 20px;
+  border: none;
+
+  
+  left: 110px;
+  bottom: 50px;
+}
+
+.cerrar{
+  background-color: red;
+  width: 150px;
+  height: 50px;
+  font-size: 20px;
+}
+
+.verAmbientes{
+  position: absolute;
+  display: flex;
+ background-color: white;
+  cursor: pointer;
+width: 150px;
+font-size: 25px;
+  border: none;
+  left: 25px;
+  top: 200px;
+  transition: 0.8s;
+}
+
+.verAmbientes:hover{
+ text-decoration: underline;
+  transition: 0.8s;
+}

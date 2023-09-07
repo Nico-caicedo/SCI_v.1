@@ -1,0 +1,12 @@
+crear las secciones que más se repiten en todo el sistema de manera que solo exista un archvio de este para el codigo entero
+
+
+-header X tiempo 1hr
+
+-ventana modal para aceptar o denegar una elimianción 
+
+-ventana deplegable en el header parte de perfil de usuario, opciones que incluye: editar datos perfil, cerrar sesión 
+
+-ventana modal para modificaciones del usuario que ingresa
+
+-ventana modal para eliminación modificacion de centro de formación, para ambiente y para elementos estas cargando los datos individuales de cada elemento selecionado, con una única ventana modal por sección 

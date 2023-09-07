@@ -1,0 +1,102 @@
+
+    <main >
+        <div>
+            <h1 class='title_inventario'>
+                Ambiente 307
+            </h1>
+            <hr>
+        </div>
+        <section class='container_inventario'>
+
+            <article class='container_elementos'>
+                <h2 class='subtitle_inventario'>Elementos</h2>
+                <!-- script de buscador -->
+                <div class='buscador'>
+                    <input type="text" placeholder="buscar">
+                </div>
+                <div class="elementos">
+                    <div>
+
+                    </div>
+                    <div class='elemento'>
+                        <img src="./assets/img/elemento1.jpg" class="img_elemento" alt="">
+                        <p>PC</p>
+                        <p>455551</p>
+                        <div class="opc_elemento">
+                            <div class='edit'>
+                                <img src="./assets/img/edit.svg" alt="">
+                            </div>
+                            <div class='elimina'>
+                                <img src="./assets/img/trash.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='elemento'>
+                        <img src="./assets/img/elemento2.jpg" class="img_elemento" alt="">
+                        <p>PC</p>
+                        <p>455551</p>
+                        <div class="opc_elemento">
+                            <div class='edit'>
+                                <img src="./assets/img/edit.svg" alt="">
+                            </div>
+                            <div class='elimina'>
+                                <img src="./assets/img/trash.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='elemento'>
+                        <img src="./assets/img/elemento3.jpg" class="img_elemento" alt="">
+                        <p>PC</p>
+                        <p>455551</p>
+                        <div class="opc_elemento">
+                            <div class='edit'>
+                                <img src="./assets/img/edit.svg" alt="">
+                            </div>
+                            <div class='elimina'>
+                                <img src="./assets/img/trash.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </article>
+            <article class='container_descripcion'>
+                <div class='section1'>
+                    <div class="dato_ambiente">
+
+                        <img src="./assets/img/ambiente2.jpg" class="img_present" alt="">
+                        <h2 class='nombre_ambiente'>Ambiente 307</h2>
+                    </div>
+                </div>
+
+                <div class='section2'>
+                    <div class='datos_elemento'>
+                        <div class='descrip'>
+                        <p>Nombre: Silla ergonomica</p>
+                        <p>  color: negro</p>
+                        <p>valor: $89000</p>
+                        <p>estado: disponible</p>
+                        <p>
+                        codigo: 455551
+                        </p>
+                     
+                        </div>
+                      
+                       
+
+
+
+                        <div class='elemento_img'>
+                            <img src="./assets/img/elemento3.jpg" class="img_elementos" alt="">
+                            <h3>Silla Ergonomica</h3>
+                        </div>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+    </main>
