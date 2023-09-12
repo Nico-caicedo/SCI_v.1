@@ -107,32 +107,52 @@ include '../controllers/conexion.php';
                             <div class='section2'>
 
 
-                                <form action="">
+                                <form action="" method="post" enctype="multipart/form-data">
 
                                     <div>
                                         <label for="">Nombre Centro de formación</label>
-                                        <input type="text" name="Nombre">
+                                        <input type="text" name="name_cf">
                                     </div>
 
                                     <div>
                                         <label for="">Dirección</label>
-                                        <input type="text" name="Nombre">
+                                        <input type="text" name="direccion_cf">
                                     </div>
 
                                     <div>
                                         <label for="">Foto</label>
-                                        <input type="file" name="img">
-                                    </div>
+                                        <input type="file" name="imagenes" id="imagenes" multiple>
 
-                                    <div>
-                                        <select name="" id="">
+                                        <div>
+                                            <p>Ubicación</p>
 
-                                        </select>
-                                    </div>
-                                    <input type="submit" name='agregar' value="Enviar">
+                                            <label for="">Departamento</label>
+                                            <select name="id_municipio" id="list-dep">
+             
+                                            </select>
+
+
+                                            <label for="">municipios</label>
+                                            <select name="id_municipio" id="">
+                                                <?php
+
+                                                $municipios = mysqli_query($conn, "SELECT * FROM municipios");
+
+                                                while ($m = mysqli_fetch_assoc($municipios)) {
+                                                    echo "<option value='{$m['id']}'>{$m['name_municipio']}</option>";
+                                                }
+                                                ;
+
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <input type="submit" name='CF' value="Enviar">
                                 </form>
 
+                                <?php
+                                include '../controllers/add_CF.php';
 
+                                ?>
 
 
 
@@ -190,9 +210,8 @@ include '../controllers/conexion.php';
                                     <div>
                                         <label for="">Ubicación:</label>
                                         <select name="CF">
-                                            <option value="florencia">Florencia</option>
-                                            <option value="morelia">Morelia</option>
-                                        </select>
+                                            
+                                    </select>
                                     </div>
 
                                     <div>
@@ -293,50 +312,50 @@ include '../controllers/conexion.php';
 
                 <div id="seccion-4">
                     <div class="historial">
-                       
-                            <h2>Historial</h2>
+
+                        <h2>Historial</h2>
                         <div class="contenedor_tarjetas">
-                                <div class="tarjeta_delet">
-                                    <div class="name">Nicolas Caicedo / 1006537933</div>
-                                    <p class="descripcion">Elimino elemento --nombre elemento-- con código 
-                                        456952
-                                    </p>
-                                    <hr class="linea">
-                                    <p class="fecha">elimiancion fue 23 de diciembre 2023</p>
-                                </div>
+                            <div class="tarjeta_delet">
+                                <div class="name">Nicolas Caicedo / 1006537933</div>
+                                <p class="descripcion">Elimino elemento --nombre elemento-- con código
+                                    456952
+                                </p>
+                                <hr class="linea">
+                                <p class="fecha">elimiancion fue 23 de diciembre 2023</p>
+                            </div>
 
-                                <div class="tarjeta_delet">
-                                    <div class="name">Nicolas Caicedo / 1006537933</div>
-                                    <p class="descripcion">Elimino elemento --nombre elemento-- con código 
-                                        456952
-                                    </p>
-                                    <hr class="linea">
-                                    <p class="fecha">elimiancion fue 23 de diciembre 2023</p>
-                                </div>
-                                <div class="tarjeta_delet">
-                                    <div class="name">Nicolas Caicedo / 1006537933</div>
-                                    <p class="descripcion">Elimino elemento --nombre elemento-- con código 
-                                        456952 
-                                    </p>
-                                    <hr class="linea">
-                                    <p class="fecha">elimiancion fue 23 de diciembre 2023</p>
-                                </div>
-                                <div class="tarjeta_delet">
-                                    <div class="name">Nicolas Caicedo / 1006537933</div>
-                                    <p class="descripcion">Elimino elemento --nombre elemento-- con código 
-                                        456952
-                                    </p>
-                                    <hr class="linea">
-                                    <p class="fecha">elimiancion fue 23 de diciembre 2023</p>
-                                </div>
-                                
-                                <div class="tarjeta_create">
+                            <div class="tarjeta_delet">
+                                <div class="name">Nicolas Caicedo / 1006537933</div>
+                                <p class="descripcion">Elimino elemento --nombre elemento-- con código
+                                    456952
+                                </p>
+                                <hr class="linea">
+                                <p class="fecha">elimiancion fue 23 de diciembre 2023</p>
+                            </div>
+                            <div class="tarjeta_delet">
+                                <div class="name">Nicolas Caicedo / 1006537933</div>
+                                <p class="descripcion">Elimino elemento --nombre elemento-- con código
+                                    456952
+                                </p>
+                                <hr class="linea">
+                                <p class="fecha">elimiancion fue 23 de diciembre 2023</p>
+                            </div>
+                            <div class="tarjeta_delet">
+                                <div class="name">Nicolas Caicedo / 1006537933</div>
+                                <p class="descripcion">Elimino elemento --nombre elemento-- con código
+                                    456952
+                                </p>
+                                <hr class="linea">
+                                <p class="fecha">elimiancion fue 23 de diciembre 2023</p>
+                            </div>
 
-                                </div>
+                            <div class="tarjeta_create">
 
-                                <div class="tarjeta_edit">
+                            </div>
 
-                                </div>
+                            <div class="tarjeta_edit">
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -357,6 +376,8 @@ include '../controllers/conexion.php';
 
     </main>
     <script src="../assets/js/show_sec.js"></script>
+    <script src="../assets/js/call_cf.js"></script>
+
 </body>
 
 </html>
