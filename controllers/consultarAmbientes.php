@@ -1,6 +1,6 @@
 <?php
 $rol = 1;
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
     require_once './conexion.php';
     $piso = mysqli_real_escape_string($conn, $_POST['piso_id']);
     $consulta = $conn->query("SELECT * FROM ambientes WHERE id_centro = '$piso'");
@@ -58,9 +58,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php
     }
     echo '</section>';
-} else {
-    echo '<p>No existen ambientes en este piso</p>';
-}
 
 
 ?>

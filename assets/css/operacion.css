@@ -11,4 +11,69 @@ font-weight:bold;
 font-size: 1.5rem;
 margin: 7px;
 width: 98%;
+position: relative;
 }
+
+
+#dark{
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top:0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.123);
+    z-index: 1;
+}
+
+#delet{
+        position: absolute;
+        left: 40%;
+        top: 50%;
+        background-color: white;
+        width: 400px;
+        height: 200px;
+
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+        border-radius: 20px;
+        z-index: 2;
+
+}
+
+#delet h2{
+    text-align: center;
+}
+
+#delet button{
+    width: 40%;
+    height: 50px;
+    font-size: 1em;
+    cursor: pointer;
+   
+   
+}
+#delet div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#boton1{
+    background-color: rgb(0, 110, 255);
+
+    
+}
+
+#boton2{
+    background-color: rgb(255, 17, 0);
+
+    
+}
+

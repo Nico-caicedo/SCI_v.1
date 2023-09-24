@@ -13,6 +13,8 @@ include '../controllers/conexion.php';
     <title>Inicio</title>
     <link rel="stylesheet" href="../assets/css/inicio.css">
     <link rel="stylesheet" href="../assets/css/ambiente.css">
+    <link rel="stylesheet" href="../assets/css/operacion.css">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,34 +69,20 @@ include '../controllers/conexion.php';
                             <div class='buscador'>
                                 <input type="text" placeholder="buscar">
                             </div>
-                            <div class="elementos">
+                            <div id='CF' class="elementos">
                                 <div>
 
                                 </div>
 
-                                <?php
-
-                                $query = mysqli_query($conn, "SELECT * FROM centros_educacion ");
-                                while ($row = mysqli_fetch_assoc($query)) {
-                                    echo "<div class='elemento'>
-                                    <img src='{$row['img']}' class='img_elemento' >
-                                    <p>{$row['name_cta']}</p>
-                
-                                    <div class='opc_elemento'>
-                                        <div class='edit'>
-                                            <img src='../assets/img/edit.svg' >
-                                        </div>
-                                        <div class='elimina'>
-                                            <img src='../assets/img/trash.svg'>
-                                        </div>
-                                    </div>
-                                </div>";
-                                }
-
-                                ?>
+                              
 
                             </div>
+
+
+
                         </article>
+
+                        <!-- permite gestionar centros de formación -->
                         <article class='container_descripcion'>
                             <div class='section1'>
                                 <div class="dato_ambiente">
@@ -107,7 +95,7 @@ include '../controllers/conexion.php';
                             <div class='section2'>
 
 
-                                <form action="" method="post" enctype="multipart/form-data">
+                                <form action="" method="post" id="cf_form" enctype="multipart/form-data">
 
                                     <div>
                                         <label for="">Nombre Centro de formación</label>
@@ -127,23 +115,14 @@ include '../controllers/conexion.php';
                                             <p>Ubicación</p>
 
                                             <label for="">Departamento</label>
-                                            <select name="id_municipio" id="list-dep">
-             
+                                            <select name="id_departamento" id="list-dep">
+
                                             </select>
 
 
                                             <label for="">municipios</label>
-                                            <select name="id_municipio" id="">
-                                                <?php
-
-                                                $municipios = mysqli_query($conn, "SELECT * FROM municipios");
-
-                                                while ($m = mysqli_fetch_assoc($municipios)) {
-                                                    echo "<option value='{$m['id']}'>{$m['name_municipio']}</option>";
-                                                }
-                                                ;
-
-                                                ?>
+                                            <select name="id_municipio" id="list-mun">
+                                                <option value="">selecciona</option>
                                             </select>
                                         </div>
                                         <input type="submit" name='CF' value="Enviar">
@@ -210,8 +189,8 @@ include '../controllers/conexion.php';
                                     <div>
                                         <label for="">Ubicación:</label>
                                         <select name="CF">
-                                            
-                                    </select>
+
+                                        </select>
                                     </div>
 
                                     <div>
@@ -375,9 +354,12 @@ include '../controllers/conexion.php';
 
 
     </main>
+    </main><script src="../assets/js/cargar_datos.js"></script>
+
     <script src="../assets/js/show_sec.js"></script>
     <script src="../assets/js/call_cf.js"></script>
-
+    <script src="../assets/js/delet.js"></script>
+    
 </body>
 
 </html>

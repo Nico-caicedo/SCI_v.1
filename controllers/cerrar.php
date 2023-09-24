@@ -6,6 +6,7 @@ $varsesion = $_SESSION['nombre'];
 
 if($varsesion == null || $varsesion = '' ){
     echo "no tiene autorización";
+    header("location: ../login.php");
     die();
 }
 session_unset();

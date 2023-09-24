@@ -1,57 +1,69 @@
+// Función para cargar los departamentos
+function cargarDepartamentos() {
+    fetch("../controllers/call_dep.php")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Error al cargar departamentos");
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Referenciamos la etiqueta select de departamentos
+            var selectDep = document.getElementById("list-dep");
 
-// Creamos una instancia del objeto XMLHttpRequest
-var xhrr = new XMLHttpRequest();
+            // Limpiamos el select antes de añadir nuevas opciones
+            selectDep.innerHTML = '';
 
-// Configuramos la petición
-xhrr.open("GET", "../controllers/call_dep.php");
-
-// Definimos la función que se ejecutará cuando la respuesta esté lista
-xhrr.onreadystatechange = function () {
-    if (xhrr.readyState === XMLHttpRequest.DONE && xhrr.status === 200) {
-        // Parseamos la respuesta JSON
-        var opciones = JSON.parse(xhrr.responseText);
-
-        // Referenciamos la etiqueta select
-        var select = document.getElementById("select-ubicacion");
-        
-        // Recorremos las opciones y las añadimos al select
-        opciones.forEach(function (opcion) {
-            var option = document.createElement("option");
-            option.value = opcion.id_aula;
-            option.text = opcion.nombre;
-            select.appendChild(option);
+            // Recorremos las opciones y las añadimos al select
+            data.forEach(function (opcion) {
+                var option = document.createElement("option");
+                option.value = opcion.id;
+                option.text = opcion.nombre;
+                selectDep.appendChild(option);
+            });
+        })
+        .catch(error => {
+            console.error("Error:", error);
         });
-    }
-};
+}
 
-// Enviamos la petición
-xhrr.send();
+// Función para cargar los municipios relacionados
+function cargarMunicipios(idDep) {
+    fetch(`../controllers/call_mun.php?id_dep=${idDep}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Error al cargar municipios");
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Referenciamos la etiqueta select de municipios
+            var selectMun = document.getElementById("list-mun");
 
+            // Limpiamos el select antes de añadir nuevas opciones
+            selectMun.innerHTML = '';
 
-// Creamos una instancia del objeto XMLHttpRequest
-var xhr = new XMLHttpRequest();
-
-// Configuramos la petición
-xhr.open("GET", "../controllers/ambientes_ubi.php");
-
-// Definimos la función que se ejecutará cuando la respuesta esté lista
-xhr.onreadystatechange = function () {
-    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-        // Parseamos la respuesta JSON
-        var opciones = JSON.parse(xhr.responseText);
-
-        // Referenciamos la etiqueta select
-        var select = document.getElementById("select-ubicaciones");
-        
-        // Recorremos las opciones y las añadimos al select
-        opciones.forEach(function (opcion) {
-            var option = document.createElement("option");
-            option.value = opcion.id_aula;
-            option.text = opcion.nombre;
-            select.appendChild(option);
+            // Recorremos las opciones y las añadimos al select de municipios
+            data.forEach(function (opcion) {
+                var option = document.createElement("option");
+                option.value = opcion.id;
+                option.text = opcion.nombre;
+                selectMun.appendChild(option);
+            });
+        })
+        .catch(error => {
+            console.error("Error:", error);
         });
-    }
-};
+}
 
-// Enviamos la petición
-xhr.send();
+// Llamamos a la función para cargar los departamentos cuando se carga la página
+document.addEventListener("DOMContentLoaded", function () {
+    cargarDepartamentos();
+});
+
+// Agregamos un evento de cambio al select de departamentos
+var selectDep = document.getElementById("list-dep");
+selectDep.addEventListener("change", function () {
+    var selectedValue = selectDep.value;
+    cargarMunicipios(selectedValue);
+});

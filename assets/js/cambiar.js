@@ -12,6 +12,8 @@ verCentro.forEach(function (contenedor) {
       .then((response) => response.text()) 
       .then(function (responseText) {
         document.getElementById("contenedor_CF").style.display= 'none';
+        document.getElementById("containerAmbientes").style.display= 'flex';
+
         document.getElementById("containerAmbientes").innerHTML = responseText;
 
 
@@ -29,6 +31,7 @@ verCentro.forEach(function (contenedor) {
               .then((response) => response.text()) 
               .then(function (responseText) {
                 document.getElementById("containerAmbientes").style.display= 'none';
+                
                 document.getElementById("containerInventario").innerHTML = responseText;
               
               })

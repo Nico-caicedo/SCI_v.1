@@ -12,7 +12,7 @@
 
 <body>
 
-    <h1 class="title1">src </h1>
+    <h1 class="title1">src</h1>
     <h1 class="title2">sistema de control de inventario  </h1>
     <img class="img" src="https://www.sena.edu.co/Style%20Library/alayout/images/logoSena.png" alt="">
     <p>
@@ -24,7 +24,7 @@
 
 </body>
 
-<footer>
+<footer> 
     <p>ADSO 2023</p>
 </footer>
 </html>

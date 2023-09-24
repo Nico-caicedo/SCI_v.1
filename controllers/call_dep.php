@@ -4,7 +4,7 @@ include('conexion.php');
 
 
 // Consulta para obtener las opciones
-$resultado = $conn->query("SELECT id_aula, nombre FROM aulas");
+$resultado = $conn->query("SELECT id, nombre FROM departamentos");
 
 // Array para almacenar las opciones
 $opciones = array();

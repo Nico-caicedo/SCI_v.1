@@ -6,7 +6,9 @@ include '../controllers/conexion.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
+<body>
+    
+</body>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,10 +28,10 @@ include '../controllers/conexion.php';
     ?>
     <main>
   
-        <h1>Seleccione un centro de formacion </h1>
+       
 
         <div class="container_CF" id='contenedor_CF'>
-
+<!-- <h1 class="title_cf">Seleccione centro de formación</h1> -->
 
             <?php
 
@@ -87,12 +89,13 @@ include '../controllers/conexion.php';
         </div>
 
         <div class="container_ambientes" id="containerAmbientes"></div>
-        <div class="container_inventario" id="containerInventario"></div>
+        <div class="container_inventaio" id="containerInventario"></div>
 
     </main>
-    <script src='../assets/js/cambiar.js'>
-        <script src='../assets/js/inventario.js'>
-    </script>
+    <script src="../assets/js/cambiar.js"></script>
+   <script src="../assets/js/inventario.js"></script>
+  
+ 
 </body>
 
 </html>

@@ -3,10 +3,10 @@
 include('conexion.php');
 
 // Obtén el ID enviado desde el frontend (select1)
-$idSeleccionado = $_GET['id'];
+$idSeleccionado = $_GET['id_dep'];
 
 // Prepara la consulta SQL para obtener opciones relacionadas al ID seleccionado
-$sql = "SELECT id, name_municipio FROM municipio WHERE id_departamento = $idSeleccionado";
+$sql = "SELECT id, name_municipio FROM municipios WHERE id_departamento = $idSeleccionado";
 
 $result = $conn->query($sql);
 
@@ -16,7 +16,7 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $options[] = [
             'id' => $row['id'],
-            'nombre' => $row['nombre']
+            'nombre' => $row['name_municipio']
         ];
     }
 }
