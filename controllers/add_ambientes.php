@@ -2,14 +2,14 @@
 include 'conexion.php';
 
 // Verifica si se ha recibido una solicitud POST con la clave 'CF'
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_POST['ambiente'])) {
     // Realiza la conexión a la base de datos (asegúrate de tener la variable $conn definida)
     // ...
 
     // Obtiene los datos del formulario
-    $name_cf = $_POST['name_cf'];
-    $direccion = $_POST['direccion_cf'];
-    $municipio = $_POST['id_municipio'];
+    $name = $_POST['name_amb'];
+    $code = $_POST['code_amb'];
+    $ubi = $_POST['id_cf'];
 
     // Procesa y crea la ruta de la imagen
     $targetDir = "../assets/img/"; // Cambia "carpeta_destino" a la ruta de la carpeta donde deseas guardar las imágenes
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (move_uploaded_file($_FILES["imagenes"]["tmp_name"], $rutaArchivo)) {
         // Si la imagen se ha cargado correctamente, realiza la inserción en la base de datos
-        $sql = "INSERT INTO centros_educacion (name_cta, direccion, img, id_municipio) VALUES ('$name_cf', '$direccion', '$rutaArchivo', '$municipio')";
+        $sql = "INSERT INTO ambientes(nombre, cod, id_centro, img) VALUES ('$name', '$code',  '$ubi', '$rutaArchivo')";
         
         if (mysqli_query($conn, $sql)) {
             // Si la inserción en la base de datos es exitosa, devuelve una respuesta JSON con éxito

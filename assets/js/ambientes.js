@@ -1,44 +1,5 @@
 console.log("hola mundo");
 
-//funciones para borrar centros de educaion
-function abrir_CF() {
-  var darkOverlay = document.getElementById("dark");
-  var deleteConfirmation = document.getElementById("delet");
-
-  if (darkOverlay && deleteConfirmation) {
-    darkOverlay.style.display = "flex";
-    deleteConfirmation.style.display = "flex";
-  }
-}
-
-function cerrarFormulario_CF() {
-  document.getElementById("dark").style.display = "none";
-  document.getElementById("delet").style.display = "none";
-}
-
-function delete_CF(id) {
-  // Cambié el nombre del parámetro a "id" en lugar de "id_CF"
-  // Confirmar si el usuario realmente quiere eliminar el elemento
-  if (id) {
-    // Realizar una solicitud AJAX para eliminar el elemento
-    fetch(`../controllers/delete_CF.php?id=${id}`, {
-      method: "DELETE", // Puedes ajustar el método según tu API
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Error al eliminar el elemento");
-        }
-        // Eliminación exitosa, puedes realizar acciones adicionales si es necesario
-        // Por ejemplo, actualizar la interfaz de usuario o recargar la página
-        console.log(`Elemento con ID ${id} eliminado exitosamente`);
-        actualizarContenido();
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  }
-}
-
 function cargarContenido() {
   $.ajax({
     url: "../controllers/cargar_cf.php",
@@ -71,35 +32,34 @@ function cargarContenido() {
   });
 }
 
-$(document).ready(function () {
-  cargarContenido();
-});
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
-  var cf_form = document.querySelector("#cf_form"); // Usar querySelector para seleccionar un elemento por su ID
- 
+  cargarContenido();
 
-  cf_form.addEventListener("submit", function (event) {
+  var cf_form = document.querySelector("#form_ambiente"); // Usar querySelector para seleccionar un elemento por su ID
+  var form_reset = document.getElementById("form_ambiente")
+  form_ambiente.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    var formData = new FormData(cf_form); // Cambiar 'formData' a 'FormData'
+    var formData = new FormData(form_ambiente); // Cambiar 'formData' a 'FormData'
 
-    fetch("../controllers/add_cf.php", {
+    fetch("../controllers/add_ambientes.php", {
+      
       method: "POST", // Especificar el método POST para enviar datos al servidor
       body: formData, // Enviar los datos del formulario
     })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("La solicitud no pudo completarse correctamente.");
-      }
-      return response.json();
-    })
+      .then((response) => {
+        
+        if (!response.ok) {
+          throw new Error("La solicitud no pudo completarse correctamente.");
+        }
+        return response.json();
+      })
       .then((data) => {
         if (data && data.success) {
+          form_ambiente.reset();
           console.log("registro exitoso"); // Corregir "existoso" a "exitoso"
           actualizarContenido();
+         
         } else {
           alert("fallo registro"); // Corregir "resgistro" a "registro"
         }
@@ -110,8 +70,30 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// funcion para eliminar ambientes
 
-
+function delete_CF(id) {
+  // Cambié el nombre del parámetro a "id" en lugar de "id_CF"
+  // Confirmar si el usuario realmente quiere eliminar el elemento
+  if (id) {
+    // Realizar una solicitud AJAX para eliminar el elemento
+    fetch(`../controllers/delete_CF.php?id=${id}`, {
+      method: "DELETE", // Puedes ajustar el método según tu API
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error al eliminar el elemento");
+        }
+        // Eliminación exitosa, puedes realizar acciones adicionales si es necesario
+        // Por ejemplo, actualizar la interfaz de usuario o recargar la página
+        console.log(`Elemento con ID ${id} eliminado exitosamente`);
+        actualizarContenido();
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }
+}
 
 function actualizarContenido() {
   // Realiza una solicitud AJAX para cargar nuevamente el contenido
@@ -130,7 +112,7 @@ function actualizarContenido() {
         contenedor.addEventListener("click", function () {
           var id_CF = this.getAttribute("data-id");
           console.log(id_CF);
-
+        
           var boton = document.getElementById("boton1");
           boton.setAttribute("data-id", id_CF);
 
@@ -145,4 +127,23 @@ function actualizarContenido() {
       alert("Error al cargar el contenido.");
     },
   });
+}
+
+//funciones para abrir ventanas modales
+
+// ----------- modificar las funciones para evitar usar el 
+// evento onclick , y usar el evento escucha.
+function abrir_CF() {
+  var darkOverlay = document.getElementById("dark");
+  var deleteConfirmation = document.getElementById("delet");
+
+  if (darkOverlay && deleteConfirmation) {
+    darkOverlay.style.display = "flex";
+    deleteConfirmation.style.display = "flex";
+  }
+}
+
+function cerrarFormulario_CF() {
+  document.getElementById("dark").style.display = "none";
+  document.getElementById("delet").style.display = "none";
 }

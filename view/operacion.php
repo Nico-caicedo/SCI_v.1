@@ -14,7 +14,7 @@ include '../controllers/conexion.php';
     <link rel="stylesheet" href="../assets/css/inicio.css">
     <link rel="stylesheet" href="../assets/css/ambiente.css">
     <link rel="stylesheet" href="../assets/css/operacion.css">
-
+    <link rel="stylesheet" href="../assets/css/card.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,7 +74,7 @@ include '../controllers/conexion.php';
 
                                 </div>
 
-                              
+
 
                             </div>
 
@@ -176,19 +176,19 @@ include '../controllers/conexion.php';
                         </div>
 
                         <div class="segundo-contenedor">
-                            <form class="form_ambiente" method="post" enctype="multipart/form-data">
+                            <form class="form_ambiente" id="form_ambiente" method="post" enctype="multipart/form-data">
                                 <div>
                                     <label for="">Nombre del ambiente:</label>
-                                    <input type="text" name="nombre" placeholder="Nombre del ambiente" required>
+                                    <input type="text" name="name_amb"  placeholder="Nombre del ambiente" required>
                                 </div>
                                 <div>
                                     <label for="">Código del ambiente:</label>
-                                    <input type="text" name="codigo" placeholder="Código del ambiente" required>
+                                    <input type="text" name="code_amb" placeholder="Código del ambiente" required>
                                 </div>
                                 <div>
                                     <div>
-                                        <label for="">Ubicación:</label>
-                                        <select name="CF">
+                                        <label for="">Centro de formación:</label>
+                                        <select name="id_cf" id="list-cf">
 
                                         </select>
                                     </div>
@@ -204,11 +204,11 @@ include '../controllers/conexion.php';
                                 </div>
                                 <div>
                                     <label for="imagen">Subir imagen:</label>
-                                    <input type="file" name="imagen" id="imagen" accept="image/*" required>
-
+                                    <input type="file" name="imagenes" id="imagen" accept="image/*" required>
+ 
                                 </div>
                                 <div class="button1">
-                                    <button class="crear" name="crear">Crear</button>
+                                    <button class="crear" name="ambiente">Crear</button>
                                 </div>
                             </form>
                         </div>
@@ -239,7 +239,7 @@ include '../controllers/conexion.php';
                                         <div class="nombre">Nombre elemento</div>
                                         <div class="dosopciones">
                                             <div class="editar">Editar<i class="fa-solid fa-pencil"></i></div>
-                                            <div class="eliminar">Eliminar<i class="fa-regular fa-circle-xmark"></i>
+                                            <div class="eliminar" id="">Eliminar<i class="fa-regular fa-circle-xmark"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -260,7 +260,7 @@ include '../controllers/conexion.php';
                                 </div>
                                 <div>
                                     <div>
-                                        <label for="">Ubicación:</label>
+                                        <label for="">Ambiente:</label>
                                         <select name="CF">
                                             <option value="florencia">Florencia</option>
                                             <option value="morelia">Morelia</option>
@@ -335,6 +335,28 @@ include '../controllers/conexion.php';
                             <div class="tarjeta_edit">
 
                             </div>
+                            <div class="card">
+                                <div class="header">
+                                    <div>
+                                        <a class="title" href="#">
+                                            Building a SaaS product as a software developer
+                                        </a>
+                                        <p class="name">By John Doe</p>
+                                    </div>
+                                    <span class="image"></span>
+                                </div>
+                                <p class="description">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. At velit illum
+                                    provident a, ipsa maiores deleniti consectetur nobis et eaque.
+                                </p>
+                                <dl class="post-info">
+                                    <div class="cr">
+                                        <dt class="dt">Delet</dt>
+                                        <dd class="dd">31st June, 2021</dd>
+                                    </div>
+
+                                </dl>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -354,12 +376,14 @@ include '../controllers/conexion.php';
 
 
     </main>
-    </main><script src="../assets/js/cargar_datos.js"></script>
+    </main>
+    <script src="../assets/js/cargar_datos.js"></script>
 
     <script src="../assets/js/show_sec.js"></script>
-    <script src="../assets/js/call_cf.js"></script>
-    <script src="../assets/js/delet.js"></script>
-    
+    <script src="../assets/js/cargar_opc.js"></script>
+    <script src="../assets/js/cf.js"></script>
+    <script src="../assets/js/ambientes.js"></script>
+
 </body>
 
 </html>

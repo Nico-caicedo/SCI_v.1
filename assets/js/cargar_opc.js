@@ -59,6 +59,7 @@ function cargarMunicipios(idDep) {
 // Llamamos a la función para cargar los departamentos cuando se carga la página
 document.addEventListener("DOMContentLoaded", function () {
     cargarDepartamentos();
+    cargarCf();
 });
 
 // Agregamos un evento de cambio al select de departamentos
@@ -67,3 +68,37 @@ selectDep.addEventListener("change", function () {
     var selectedValue = selectDep.value;
     cargarMunicipios(selectedValue);
 });
+
+
+
+
+// funcion para cargar centro de formación
+
+
+function cargarCf() {
+    fetch("../controllers/call_cf.php")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Error al cargar departamentos");
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Referenciamos la etiqueta select de departamentos
+            var selectCf = document.getElementById("list-cf");
+            console.log(selectCf)
+            // Limpiamos el select antes de añadir nuevas opciones
+            selectCf.innerHTML = '';
+
+            // Recorremos las opciones y las añadimos al select
+            data.forEach(function (opcion) {
+                var option = document.createElement("option");
+                option.value = opcion.id;
+                option.text = opcion.name_cta;
+                selectCf.appendChild(option);
+            });
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
+}
