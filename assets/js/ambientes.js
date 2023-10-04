@@ -1,26 +1,26 @@
 console.log("hola mundo");
 
-function cargarContenido() {
+function cargarAmbientes() {
   $.ajax({
-    url: "../controllers/cargar_cf.php",
+    url: "../controllers/cargar_ambiente.php",
     method: "GET",
     dataType: "html",
     success: function (data) {
-      $("#CF").html(data);
+      $("#scroll_ambientes").html(data);
 
       // Ahora que el contenido se ha cargado, puedes adjuntar el manejador de eventos
-      var elementos = document.querySelectorAll(".elemento");
-
-      elementos.forEach(function (contenedor) {
+      var elemento = document.querySelectorAll("#primer-contenedor");
+  
+      elemento.forEach(function (contenedor) {
         contenedor.addEventListener("click", function () {
-          var id_CF = this.getAttribute("data-id");
-          console.log(id_CF);
+          var id_Amb = this.getAttribute("data-amb");
+          console.log(id_Amb);
 
-          var boton = document.getElementById("boton1");
-          boton.setAttribute("data-id", id_CF);
+          var boton = document.getElementById("boto1");
+          boton.setAttribute("data-amb", id_Amb);
 
-          boton1.addEventListener("click", function () {
-            delete_CF(id_CF); // Llamamos a la función delete_CF con el ID_CF
+          boton.addEventListener("click", function () {
+            delete_Ambiente(id_Amb); // Llamamos a la función delete_CF con el ID_CF
           });
           // Resto del código...
         });
@@ -33,7 +33,7 @@ function cargarContenido() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  cargarContenido();
+  cargarAmbientes();
 
   var cf_form = document.querySelector("#form_ambiente"); // Usar querySelector para seleccionar un elemento por su ID
   var form_reset = document.getElementById("form_ambiente")
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (data && data.success) {
           form_ambiente.reset();
           console.log("registro exitoso"); // Corregir "existoso" a "exitoso"
-          actualizarContenido();
+          actualizarAmbientes();
          
         } else {
           alert("fallo registro"); // Corregir "resgistro" a "registro"
@@ -72,12 +72,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // funcion para eliminar ambientes
 
-function delete_CF(id) {
+function delete_Ambiente(id) {
   // Cambié el nombre del parámetro a "id" en lugar de "id_CF"
   // Confirmar si el usuario realmente quiere eliminar el elemento
   if (id) {
     // Realizar una solicitud AJAX para eliminar el elemento
-    fetch(`../controllers/delete_CF.php?id=${id}`, {
+    fetch(`../controllers/delet_Amb.php?id=${id}`, {
       method: "DELETE", // Puedes ajustar el método según tu API
     })
       .then((response) => {
@@ -87,7 +87,7 @@ function delete_CF(id) {
         // Eliminación exitosa, puedes realizar acciones adicionales si es necesario
         // Por ejemplo, actualizar la interfaz de usuario o recargar la página
         console.log(`Elemento con ID ${id} eliminado exitosamente`);
-        actualizarContenido();
+        actualizarAmbientes();
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -95,29 +95,29 @@ function delete_CF(id) {
   }
 }
 
-function actualizarContenido() {
+function actualizarAmbientes() {
   // Realiza una solicitud AJAX para cargar nuevamente el contenido
   $.ajax({
-    url: "../controllers/cargar_cf.php",
+    url: "../controllers/cargar_ambiente.php",
     method: "GET",
     dataType: "html",
     success: function (data) {
-      $("#CF").html(data);
+      $("#scroll_ambientes").html(data);
       console.log("Contenido actualizado"); // Muestra un mensaje en la consola
 
       // Ahora que el contenido se ha cargado nuevamente, puedes volver a adjuntar los manejadores de eventos si es necesario
-      var elementos = document.querySelectorAll(".elemento");
+      var elemento = document.querySelectorAll(".primer-contenedor");
 
-      elementos.forEach(function (contenedor) {
+      elemento.forEach(function (contenedor) {
         contenedor.addEventListener("click", function () {
-          var id_CF = this.getAttribute("data-id");
-          console.log(id_CF);
+          var id_Amb = this.getAttribute("data-amb");
+          console.log(id_Amb);
         
-          var boton = document.getElementById("boton1");
-          boton.setAttribute("data-id", id_CF);
+          var boton = document.getElementById("boto1");
+          boton.setAttribute("data-amb", id_Amb);
 
-          boton1.addEventListener("click", function () {
-            delete_CF(id_CF); // Llama a la función delete_CF con el ID_CF si es necesario
+          boton.addEventListener("click", function () {
+            delete_Ambiente(id_Amb); // Llama a la función delete_CF con el ID_CF si es necesario
           });
           // Resto del código...
         });
@@ -133,9 +133,13 @@ function actualizarContenido() {
 
 // ----------- modificar las funciones para evitar usar el 
 // evento onclick , y usar el evento escucha.
-function abrir_CF() {
-  var darkOverlay = document.getElementById("dark");
-  var deleteConfirmation = document.getElementById("delet");
+
+
+
+function abrir_Amb() {
+  console.log('hola mundo')
+  var darkOverlay = document.getElementById("darkk");
+  var deleteConfirmation = document.getElementById("delete");
 
   if (darkOverlay && deleteConfirmation) {
     darkOverlay.style.display = "flex";
@@ -143,7 +147,7 @@ function abrir_CF() {
   }
 }
 
-function cerrarFormulario_CF() {
-  document.getElementById("dark").style.display = "none";
-  document.getElementById("delet").style.display = "none";
+function cerrarFormulario_Amb() {
+  document.getElementById("darkk").style.display = "none";
+  document.getElementById("delete").style.display = "none";
 }

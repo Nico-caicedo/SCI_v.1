@@ -146,4 +146,4 @@ function actualizarContenido() {
       alert("Error al cargar el contenido.");
     },
   });
-}
+}  

@@ -2,7 +2,7 @@
 include 'conexion.php';
 
 // Verifica si se ha recibido una solicitud POST con la clave 'CF'
-if (isset($_POST['ambiente'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Realiza la conexión a la base de datos (asegúrate de tener la variable $conn definida)
     // ...
 
