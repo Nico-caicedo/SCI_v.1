@@ -13,7 +13,7 @@ verCentro.forEach(function (contenedor) {
       .then(function (responseText) {
         document.getElementById("contenedor_CF").style.display= 'none';
         document.getElementById("containerAmbientes").style.display= 'flex';
-
+        document.getElementById("titulo1").style.display= 'none';
         document.getElementById("containerAmbientes").innerHTML = responseText;
 
 
@@ -31,7 +31,7 @@ verCentro.forEach(function (contenedor) {
               .then((response) => response.text()) 
               .then(function (responseText) {
                 document.getElementById("containerAmbientes").style.display= 'none';
-                
+                document.getElementById("containerInventario").style.display= 'flex';
                 document.getElementById("containerInventario").innerHTML = responseText;
               
               })
@@ -42,18 +42,7 @@ verCentro.forEach(function (contenedor) {
         });
         
         
-        function vaciarAmbiente(){
-          document.getElementById("containerAmbientes").innerHTML = '';
-          document.getElementById("containerAmbientes").display = 'none';
-          document.getElementById("contenedor_CF").style.display= 'flex';
-        }
-
-               
-        function vaciarInventario(){
-          document.getElementById("containerAmbientes").innerHTML = '';
-          document.getElementById("containerAmbientes").display = 'none';
-          document.getElementById("contenedor_CF").style.display= 'flex';
-        }
+   
         
 
       })
@@ -63,3 +52,17 @@ verCentro.forEach(function (contenedor) {
   });
 });
 
+
+
+function vaciarAmbiente(){
+  document.getElementById("containerAmbientes").innerHTML = '';
+  document.getElementById("containerAmbientes").display = 'none';
+  document.getElementById("contenedor_CF").style.display= 'flex';
+}
+
+       
+function vaciarInventario(){
+  document.getElementById("containerInventario").innerHTML = '';
+  document.getElementById("containerInventario").display = 'none';
+  document.getElementById("containerAmbientes").style.display= 'flex';
+}

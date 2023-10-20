@@ -14,7 +14,6 @@ $perfil = $f["img"];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/header.css">
     <link rel="stylesheet" href="../assets/css/header.css">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200&display=swap" rel="stylesheet">
 
@@ -26,13 +25,22 @@ $perfil = $f["img"];
             <img class="logo_sena" src="https://www.sena.edu.co/Style%20Library/alayout/images/logoSena.png" alt="">
             <h2 class="name_logo">InvenTech</h2>
         </div>
+
+
+
+      
+        <img  id="menu_burger"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAArUlEQVRoQ+2WQQrAIBDE9P+Prj+QgTAs0vTsrLuJYvd6/NuP978cYNqgBjQACXiEIEAc1wBGCAv8wsAHIdH4FXJiwAGgAg1AgN14cge6HcDqDgAB4rgGMEJYIDHgQ9aErAFIN4njX4lkk7E1yREaay7Z2AESSs01GmjSTWonBnyJE5KXNfgd0MC0Abh/N55c4m4HsLoDQIA4rgGMEBbQAASI4xrACGEBDUCAOH4Al9kMMZG0RokAAAAASUVORK5CYII=" />
+        <img   id="close"
+        src="../assets/img/close.svg"
+        >
         <?php
 
 
         $rol = 1;
 
         if ($rol == 1) {
-            echo "<div class='opciones'>
+            echo "<div class='opcioness'>
             <ul>
             <a href='./inicio.php'>
                 <li>Inventario</li>
@@ -48,12 +56,12 @@ $perfil = $f["img"];
         ?>
 
         <div class="perfil usuario" id="mensaje">
-            <img src="<?php echo $perfil?>" alt="foto perfil">
+            <img src="<?php echo $perfil ?>" alt="foto perfil">
             <p>
-               <?php 
-               echo $name . " " . $lastname;
-               
-               ?>
+                <?php
+                echo $name . " " . $lastname;
+
+                ?>
             </p>
         </div>
 
@@ -110,9 +118,12 @@ $perfil = $f["img"];
                 <input type="submit" class="cargar_datos" value='cargar'>
 
             </form>
+          
             <!-- Contenido del modal -->
         </div>
-
+        <div id="dark">
+                 
+            </div>
         <script>
             const abrirModal = document.getElementById('abrirModal');
             const cerrarModal = document.getElementById('cerrarModal');
@@ -132,6 +143,7 @@ $perfil = $f["img"];
 
 
     </header>
+    <script src="../assets/js/menu.js"></script>
 </body>
 
 </html>

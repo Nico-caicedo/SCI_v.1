@@ -58,7 +58,9 @@ body {
  
 }
 
-
+#titulo1{
+  text-align: center;
+}
 
 .CF:hover {
   background-color: rgba(64, 199, 23, 0.432);
@@ -79,10 +81,13 @@ body {
   color: black;
   width: 100%;
   text-align: center;
+  font-size: 1.5rem !important;
+  text-transform: capitalize !important;
 }
 
 .text_CF p {
   text-align: center;
+  font-size: 1.2rem !important;
 }
 .opciones {
   display: flex;
@@ -502,21 +507,21 @@ body {
 #seccion-2{
   background-color: #62626280;
   display: none;
-  height: 70vh;
+  height: 80vh;
 }
 
 
 #seccion-3{
   background-color: #62626280;
   display: none;
-  height: 70vh;
+  height: 80vh;
 }
 
 
 #seccion-4{
   background-color: #62626280;
   display: none;
-  height: 70vh;
+  height: 80vh;
 }
 
 
@@ -566,4 +571,86 @@ body {
   justify-content: flex-end;
   align-items: flex-end;
   font-size: 0.7rem;
+}
+
+
+
+@media only screen and (max-width: 426px) {
+  body {
+    font-family: "Josefin Sans", sans-serif;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 7px;
+    width: 98%;
+    height: 70vh;
+    background-color: whitesmoke;
+   
+  }
+
+  .container_CF {
+    overflow: auto;
+    width: 100%;
+    height: 65vh;
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 50px;
+  }
+  
+  .img_CF {
+    width: 250px;
+    height: 150px;
+    border-radius: 5px;
+  }
+  
+  .CF {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+    flex: 1;
+    padding: 15px;
+    height: 300px;
+    cursor: pointer;
+    gap: 10px;
+    background-color: rgba(150, 150, 150, 0.171);
+    border-radius: 5px;
+   
+  }
+  
+  #titulo1{
+    text-align: center;
+  }
+  
+  .CF:hover {
+    background-color: rgba(64, 199, 23, 0.432);
+    border-radius: 5px;
+  }
+  
+  .text_CF {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .text_CF h3 {
+    font-weight: bolder;
+    color: black;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem !important;
+    text-transform: capitalize !important;
+  }
+  
+  .text_CF p {
+    text-align: center;
+    font-size: 1.2rem !important;
+  }
 }

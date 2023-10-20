@@ -21,22 +21,22 @@ header {
 
 /* configura las opciones que aparece solo para el admin */
 
-.opciones {
+.opcioness {
   width: 33.3%;
 }
 
-.opciones ul {
+.opcioness ul {
   display: flex;
   gap: 85px;
 }
 
-.opciones a {
+.opcioness a {
   text-decoration: none;
   color: black;
   padding: 20px;
 }
 
-.opciones li {
+.opcioness li {
   list-style: none;
 }
 
@@ -59,9 +59,7 @@ header {
   width: 12%;
 }
 
-.perfil:hover {
-  background-color: rgba(128, 128, 128, 0.336);
-}
+
 
 .mensaje {
   display: none;
@@ -101,7 +99,7 @@ header {
 }
 
 .mensaje ol :hover {
-   opacity: 0.8;
+  opacity: 0.8;
 }
 
 /* Estilos para la ventana modal */
@@ -196,4 +194,78 @@ font-size: 25px;
 .verAmbientes:hover{
  text-decoration: underline;
   transition: 0.8s;
+}
+
+#menu_burger{
+  display: none;
+  cursor: pointer;
+}
+
+#close{
+  display: none;
+  z-index: 3;
+  cursor: pointer;
+}
+
+#dark{
+ display: none;
+  z-index: 2;
+  width: 5%;
+  position: fixed;
+  height: 5%;
+  background: rgba(0, 0, 0, 0.301);
+  left: 50px;
+  top: 200px;
+  transition: 0.3s ease-in-out
+  /* transform: translate(100px, 0);
+  transition: transform 8s; */
+}
+@media only screen and (max-width: 426px) {
+
+
+/* configura la sección del logo y nombre de empres */
+.identidad {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column-reverse; */
+  gap: 10px;
+  height: 410px;
+}
+.logo_sena {
+  width: 30%;
+}
+
+
+.opcioness {
+    display: none;
+}
+
+.perfil{
+  display: none;
+}
+
+#menu_burger{
+  display: block;
+  transition: 1s;
+}
+
+#close{
+  display: none;
+  width: 28px;
+  transition: 1s;
+  
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 25px;
+  height: 100px;
+}
+
+
 }

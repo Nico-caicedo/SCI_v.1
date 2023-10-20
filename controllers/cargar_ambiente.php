@@ -13,7 +13,7 @@ while ($row = mysqli_fetch_assoc($query)) {
     $html .= "
     <div class='primer-contenedor' id='primer-contenedor' data-amb='" . $id . "'>
     <div class='fila1-contenedor1'>
-        <img class='img' src=".$row['img']." alt='Imagen del ambiente'>
+        <img class='img' src='".$row['img']."' alt='Imagen del ambiente'>
         <div class='nombre'>". $row['nombre'] ."</div>
         <div class='dosopciones'>
             <div class='editar'>Editar<i class='fa-solid fa-pencil'></i></div>

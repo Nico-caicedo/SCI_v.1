@@ -148,8 +148,8 @@ include '../controllers/conexion.php';
                         <div class="dos-contenedores">
                             <h2 class="titulos-elementos">Ambientes</h2>
                             <div class="scroll " id="scroll_ambientes">
-                                
-                                
+
+
                             </div>
                         </div>
 
@@ -157,7 +157,7 @@ include '../controllers/conexion.php';
                             <form class="form_ambiente" id="form_ambiente" method="post" enctype="multipart/form-data">
                                 <div>
                                     <label for="">Nombre del ambiente:</label>
-                                    <input type="text" name="name_amb"  placeholder="Nombre del ambiente" required>
+                                    <input type="text" name="name_amb" placeholder="Nombre del ambiente" required>
                                 </div>
                                 <div>
                                     <label for="">Código del ambiente:</label>
@@ -183,7 +183,7 @@ include '../controllers/conexion.php';
                                 <div>
                                     <label for="imagen">Subir imagen:</label>
                                     <input type="file" name="imagenes" id="imagen" accept="image/*" required>
- 
+
                                 </div>
                                 <div class="button1">
                                     <button class="crear" name="ambiente">Crear</button>
@@ -199,35 +199,16 @@ include '../controllers/conexion.php';
                         <div class="dos-contenedores">
                             <h2 class="titulos-elementos">Elementos</h2>
                             <div class="scroll">
-                                <div class="primer-contenedor">
-                                    <div class="fila1-contenedor1">
-                                        <img class="img" src="../assets/img/ambiente1.jpg" alt="Imagen del ambiente">
-                                        <div class="nombre">Nombre del ambiente</div>
-                                        <div class="dosopciones">
-                                            <div class="editar">Editar<i class="fa-solid fa-pencil"></i></div>
-                                            <div class="eliminar">Eliminar<i class="fa-regular fa-circle-xmark"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="primer-contenedor">
-                                    <div class="fila1-contenedor1">
-                                        <img class="img" src="../assets/img/ambiente1.jpg" alt="Imagen del ambiente">
-                                        <div class="nombre">Nombre elemento</div>
-                                        <div class="dosopciones">
-                                            <div class="editar">Editar<i class="fa-solid fa-pencil"></i></div>
-                                            <div class="eliminar" id="">Eliminar<i class="fa-regular fa-circle-xmark"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
+
 
                             </div>
                         </div>
 
                         <div class="segundo-contenedor">
-                            <form class="form_ambiente" id="container_ambiente" method="post" enctype="multipart/form-data">
+                            <form class="form_ambiente" id="container_ambiente" method="post"
+                                enctype="multipart/form-data">
                                 <div>
                                     <label for="">Nombre del ambiente:</label>
                                     <input type="text" name="nombre" placeholder="Nombre del ambiente" required>
@@ -361,6 +342,7 @@ include '../controllers/conexion.php';
     <script src="../assets/js/cargar_opc.js"></script>
     <script src="../assets/js/cf.js"></script>
     <script src="../assets/js/ambientes.js"></script>
+    <script src="../assets/js/elementos.js"></script>
 
 </body>
 

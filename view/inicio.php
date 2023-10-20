@@ -29,14 +29,16 @@ include '../controllers/conexion.php';
     <main>
   
        
-
+        <?php 
+              echo "<h2 id='titulo1'>Seleccione Centro de formación<h2>";
+        ?>
         <div class="container_CF" id='contenedor_CF'>
 <!-- <h1 class="title_cf">Seleccione centro de formación</h1> -->
 
             <?php
 
             $query = mysqli_query($conn, "SELECT * FROM centros_educacion");
-
+          
             while ($centro = mysqli_fetch_assoc($query)) {
 
 

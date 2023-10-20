@@ -3,9 +3,9 @@ $rol = 1;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     require_once './conexion.php';
     $piso = mysqli_real_escape_string($conn, $_POST['ambiente_id']);
-    $consulta = $conn->query("SELECT * FROM inventario WHERE id_ambiente = '$piso'");
+    $consulta = $conn->query("SELECT * FROM inventario WHERE id_ambiente = '$piso' ");
     if ($consulta->num_rows > 0) {
-        echo '<button id="verPisos" class="verAmbientes" onclick="vaciarPisos()"> <- Regresar</button>';
+        echo '<button id="verPisos" class="verAmbientes" onclick="vaciarInventario()"> <- Regresar</button>';
 
         echo '<div>
             </div>
@@ -72,7 +72,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </article>
             </section>';
     } else {
-        echo '<p>No existen ambientes en este piso</p>';
+        echo '<button id="verPisos" class="verAmbientes" onclick="vaciarInventario()"> <- Regresar</button>';
+        echo '<p>No existen ambientes en este pi</p>';
     }
     echo '</section>';
 } else {
